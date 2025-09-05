@@ -1,4 +1,4 @@
-package com.example.flutter_ui_task3;
+package com.example.bmi_calculater;
 
 import io.flutter.embedding.android.FlutterActivity;
 
