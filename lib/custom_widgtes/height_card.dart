@@ -3,8 +3,11 @@ import 'package:bmi_calculater/constant/dimensions.dart';
 import 'package:bmi_calculater/constant/strings.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class HeightCard extends StatefulWidget {
-  const HeightCard({super.key});
+  final int height;
+  final void Function(double)? onChanged;
+  const HeightCard({super.key, required this.height, required this.onChanged});
 
   @override
   State<StatefulWidget> createState() {
@@ -13,7 +16,6 @@ class HeightCard extends StatefulWidget {
 }
 
 class HeightCardState extends State<HeightCard> {
-  int heightResult = 150;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -30,7 +32,7 @@ class HeightCardState extends State<HeightCard> {
         SizedBox(height: AppDimensions.heightBetweenItems),
         RichText(
           text: TextSpan(
-            text: heightResult.toString(),
+            text: widget.height.toString(),
             style: TextStyle(
               fontWeight: FontWeight.w700,
               fontSize: 40,
@@ -52,12 +54,8 @@ class HeightCardState extends State<HeightCard> {
             activeColor: AppColors.buttonColor,
             min: 0,
             max: 240,
-            value: heightResult.toDouble(),
-            onChanged: (newValue) {
-              setState(() {
-                heightResult = newValue.toInt();
-              });
-            },
+            value: widget.height.toDouble(),
+            onChanged: widget.onChanged,
           ),
         ),
       ],

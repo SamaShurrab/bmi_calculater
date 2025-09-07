@@ -22,6 +22,7 @@ class BmiCalculaterPageState extends State<BmiCalculaterPage> {
   Gender? selectedGender;
   int age = 26;
   int weight = 60;
+  int height = 150;
 
   @override
   Widget build(BuildContext context) {
@@ -31,84 +32,110 @@ class BmiCalculaterPageState extends State<BmiCalculaterPage> {
         children: [
           Padding(
             padding: EdgeInsets.only(
-              right: AppDimensions.padding,
               left: AppDimensions.padding,
-              top: AppDimensions.heightBetweenCards,
+              right: AppDimensions.padding,
+              top: 10,
             ),
             child: Row(
               children: [
-                CustomCard(
-                  height: AppDimensions.height_Femal_Male_Weight_Age_Card,
-                  isSelected: selectedGender == Gender.male,
-                  onTap: () => setState(() {
-                    selectedGender = Gender.male;
-                  }),
-                  child: MaleFemaleCard(
+                Expanded(
+                  child: CustomCard(
+                    height: AppDimensions.height_Femal_Male_Weight_Age_Card,
                     isSelected: selectedGender == Gender.male,
-                    iconName: Icons.male,
-                    textData: AppStrings.male,
+                    onTap: () => setState(() {
+                      selectedGender = Gender.male;
+                    }),
+                    child: MaleFemaleCard(
+                      isSelected: selectedGender == Gender.male,
+                      iconName: Icons.male,
+                      textData: AppStrings.male,
+                    ),
                   ),
                 ),
-                CustomCard(
-                  height: AppDimensions.height_Femal_Male_Weight_Age_Card,
-                  isSelected: selectedGender == Gender.female,
-                  onTap: () => setState(() {
-                    selectedGender = Gender.female;
-                  }),
-                  child: MaleFemaleCard(
+                Expanded(
+                  child: CustomCard(
+                    height: AppDimensions.height_Femal_Male_Weight_Age_Card,
                     isSelected: selectedGender == Gender.female,
-                    iconName: Icons.female,
-                    textData: AppStrings.female,
+                    onTap: () => setState(() {
+                      selectedGender = Gender.female;
+                    }),
+                    child: MaleFemaleCard(
+                      isSelected: selectedGender == Gender.female,
+                      iconName: Icons.female,
+                      textData: AppStrings.female,
+                    ),
                   ),
                 ),
               ],
             ),
           ),
-          SizedBox(height: AppDimensions.heightBetweenCards),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: AppDimensions.padding),
+            padding: EdgeInsets.symmetric(
+              horizontal: AppDimensions.padding,
+              vertical: AppDimensions.heightBetweenCards,
+            ),
             child: CustomCard(
               height: 189,
               isSelected: false,
-              child: HeightCard(),
+              child: HeightCard(
+                height: height,
+                onChanged: (newValue) {
+                  setState(() {
+                    height = newValue.toInt();
+                  });
+                },
+              ),
             ),
           ),
-          SizedBox(height: AppDimensions.heightBetweenCards),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: AppDimensions.padding),
+            padding: EdgeInsets.only(
+              left: AppDimensions.padding,
+              right: AppDimensions.padding,
+              bottom: AppDimensions.padding,
+            ),
             child: Row(
               children: [
-                CustomCard(
-                  height: AppDimensions.height_Femal_Male_Weight_Age_Card,
-                  isSelected: false,
-                  child: WeightAgeCard(
-                    textData: AppStrings.weight,
-                    value: weight,
-                    onChanged: (value) {
-                      setState(() {
-                        weight = value;
-                      });
-                    },
+                Expanded(
+                  child: CustomCard(
+                    height: AppDimensions.height_Femal_Male_Weight_Age_Card,
+                    isSelected: false,
+                    child: WeightAgeCard(
+                      textData: AppStrings.weight,
+                      value: weight,
+                      onChanged: (value) {
+                        setState(() {
+                          weight = value;
+                        });
+                      },
+                    ),
                   ),
                 ),
-                CustomCard(
-                  height: AppDimensions.height_Femal_Male_Weight_Age_Card,
-                  isSelected: false,
-                  child: WeightAgeCard(
-                    textData: AppStrings.age,
-                    value: age,
-                    onChanged: (value) {
-                      setState(() {
-                        age = value;
-                      });
-                    },
+                Expanded(
+                  child: CustomCard(
+                    height: AppDimensions.height_Femal_Male_Weight_Age_Card,
+                    isSelected: false,
+                    child: WeightAgeCard(
+                      textData: AppStrings.age,
+                      value: age,
+                      onChanged: (value) {
+                        setState(() {
+                          age = value;
+                        });
+                      },
+                    ),
                   ),
                 ),
               ],
             ),
           ),
-          SizedBox(height: AppDimensions.heightBetweenCards),
-          CalculateButton(buttonText: AppStrings.calculate),
+          CalculateButton(
+            buttonText: AppStrings.calculate,
+            weight: weight,
+            age: age,
+            height: height,
+            selectedGender: selectedGender,
+            pageName: "result",
+          ),
         ],
       ),
     );

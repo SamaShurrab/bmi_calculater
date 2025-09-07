@@ -19,19 +19,17 @@ class CustomCard extends StatelessWidget {
     Color backgroundColor = isSelected
         ? AppColors.buttonColor
         : AppColors.secondaryColor;
-    return Expanded(
-      child: InkWell(
-        borderRadius: BorderRadius.circular(12),
-        onTap: onTap,
-        child: SizedBox(
-          height: height,
-          child: Card(
-            color: backgroundColor,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: child,
+    return InkWell(
+      borderRadius: BorderRadius.circular(12),
+      onTap: onTap,
+      child: SizedBox(
+        height: height,
+        child: Card(
+          color: backgroundColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
           ),
+          child: child,
         ),
       ),
     );

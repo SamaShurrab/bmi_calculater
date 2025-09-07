@@ -5,16 +5,20 @@ class MaleFemaleCard extends StatelessWidget {
   final IconData? iconName;
   final String? textData;
   final bool isSelected;
-  const MaleFemaleCard({super.key, this.iconName, this.textData,required this.isSelected
+  const MaleFemaleCard({
+    super.key,
+    this.iconName,
+    this.textData,
+    required this.isSelected,
   });
 
   @override
   Widget build(BuildContext context) {
-    Color textColor=isSelected?Colors.white:AppColors.textColor;
+    Color textColor = isSelected ? Colors.white : AppColors.textColor;
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Icon(iconName, color: Colors.white, size: 96),
+        Icon(iconName, color: Colors.white, size: 120),
         Text(
           textData!,
           style: TextStyle(
