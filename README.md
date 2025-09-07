@@ -53,9 +53,10 @@ It is built with a clean structure, custom widgets, and reusable components to e
 ## Screenshots 📸
 
 ### 1. BMI Calculator Page (Default & With Selection)  
-| Bmi Calculater Page |
+| Bmi Calculater Page without selection | Bmi Calculater Page with selection |
 | --- | --- |
-| ![ Bmi Calculater Page](assets/images/bmi_calculater_page.png) | ![ Bmi Calculater Page](assets/images/bmi_calculater_page2.png) |
+
+| ![ Bmi Calculater Page without selection](assets/images/bmi_calculater_page2.png) | ![ Bmi Calculater Page with selection](assets/images/bmi_calculater_page.png) |
 
 ### 2. Result Page  
 ![Result Page](assets/images/bmi_result_page.png)  
