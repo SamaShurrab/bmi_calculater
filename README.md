@@ -1,4 +1,4 @@
-# BMI Calculator App ⚖️🚀
+# BMI Calculator App 
 
 ## Project Introduction 🎯
 
