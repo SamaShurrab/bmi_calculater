@@ -4,13 +4,11 @@ import 'package:flutter/material.dart';
 class CustomCard extends StatelessWidget {
   final Widget child;
   final void Function()? onTap;
-  final double height;
   final bool isSelected;
   const CustomCard({
     super.key,
     required this.child,
     this.onTap,
-    required this.height,
     required this.isSelected,
   });
 
@@ -22,15 +20,10 @@ class CustomCard extends StatelessWidget {
     return InkWell(
       borderRadius: BorderRadius.circular(12),
       onTap: onTap,
-      child: SizedBox(
-        height: height,
-        child: Card(
-          color: backgroundColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: child,
-        ),
+      child: Card(
+        color: backgroundColor,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        child: child,
       ),
     );
   }

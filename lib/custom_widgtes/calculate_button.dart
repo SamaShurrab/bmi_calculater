@@ -23,59 +23,57 @@ class CalculateButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      // flex: 2,
-      child: SizedBox(
-        width: double.infinity,
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: AppColors.buttonColor,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.only(
-                bottomRight: Radius.circular(AppDimensions.raduisButton),
-                bottomLeft: Radius.circular(AppDimensions.raduisButton),
-              ),
+    return SizedBox(
+      height: 90,
+      width: double.infinity,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: AppColors.buttonColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              bottomRight: Radius.circular(AppDimensions.raduisButton),
+              bottomLeft: Radius.circular(AppDimensions.raduisButton),
             ),
           ),
-          onPressed: () {
-            if (pageName == "result") {
-              if (selectedGender != null) {
-                double heightInMeter = height! / 100;
-                double result = weight! / (heightInMeter * heightInMeter);
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return BmiResult(result: result);
-                    },
-                  ),
-                );
-              } else {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text(
-                      "Must Choose Gender",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                    backgroundColor: Colors.red,
-                  ),
-                );
-              }
+        ),
+        onPressed: () {
+          if (pageName == "result") {
+            if (selectedGender != null) {
+              double heightInMeter = height! / 100;
+              double result = weight! / (heightInMeter * heightInMeter);
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) {
+                    return BmiResult(result: result);
+                  },
+                ),
+              );
             } else {
-              Navigator.of(context).pop();
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    "Must Choose Gender",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  backgroundColor: Colors.red,
+                ),
+              );
             }
-          },
-          child: Text(
-            buttonText,
-            style: TextStyle(
-              fontSize: 32,
-              fontWeight: FontWeight.w600,
-              color: Colors.white,
-            ),
+          } else {
+            Navigator.of(context).pop();
+          }
+        },
+        child: Text(
+          buttonText,
+          style: TextStyle(
+            fontSize: 32,
+            fontWeight: FontWeight.w600,
+            color: Colors.white,
           ),
         ),
       ),

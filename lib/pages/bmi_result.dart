@@ -35,11 +35,13 @@ class BmiResult extends StatelessWidget {
   }
 
   String bmiCategoriesAdvise(String bmiCategorie) {
-    if (bmiCategorie == AppStrings.underweight)
+    if (bmiCategorie == AppStrings.underweight) {
       return AppStrings.underweightAdvise;
+    }
     if (bmiCategorie == AppStrings.normal) return AppStrings.normalAdvise;
-    if (bmiCategorie == AppStrings.overweight)
+    if (bmiCategorie == AppStrings.overweight) {
       return AppStrings.overweightAdvise;
+    }
     return AppStrings.obesityAdvise;
   }
 
@@ -80,7 +82,6 @@ class BmiResult extends StatelessWidget {
                 bottom: 35,
               ),
               child: CustomCard(
-                height: 503,
                 isSelected: false,
                 child: Column(
                   children: [
@@ -105,13 +106,16 @@ class BmiResult extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 40),
-                    Text(
-                      bmiCategorieAdvise,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.textColor,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Text(
+                        bmiCategorieAdvise,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          color: AppColors.textColor,
+                        ),
                       ),
                     ),
                   ],
