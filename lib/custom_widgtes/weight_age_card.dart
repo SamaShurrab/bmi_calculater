@@ -49,7 +49,7 @@ class WeightAgeCardState extends State<WeightAgeCard> {
           widget.value.toString(),
           style: TextStyle(
             fontWeight: FontWeight.w700,
-            fontSize: 40,
+            fontSize: 35,
             color: Colors.white,
           ),
         ),

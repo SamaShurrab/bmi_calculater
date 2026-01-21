@@ -50,9 +50,7 @@ It is built with a clean structure, custom widgets, and reusable components to e
 
 ---
 
-## 🛠️ Technologies Used
-
-### App Tools
+## App Tools
 
 -   flutter_launcher_icons
 -   rename
@@ -61,7 +59,7 @@ It is built with a clean structure, custom widgets, and reusable components to e
 
 ## 🎥 Application Demo
 
-🎬 
+🎬 (https://youtube.com/shorts/0JNpnQxEvuM?feature=share)
 
 ---
 
@@ -111,5 +109,5 @@ test
 
 Download the latest version of **BMI Calculator** from GitHub Releases:
 
-👉 [Download Latest APK](https://github.com/SamaShurrab/BMI-Calculator/releases/latest)
+👉 [Download Latest APK](https://github.com/SamaShurrab/bmi_calculater/releases/latest)
 

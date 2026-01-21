@@ -18,7 +18,7 @@ class MaleFemaleCard extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Icon(iconName, color: Colors.white, size: 120),
+        Icon(iconName, color: Colors.white, size: 80),
         Text(
           textData!,
           style: TextStyle(
