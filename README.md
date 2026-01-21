@@ -50,15 +50,30 @@ It is built with a clean structure, custom widgets, and reusable components to e
 
 ---
 
-## Screenshots 📸
+## 🛠️ Technologies Used
 
-### 1. BMI Calculator Page (Default & With Selection)  
-| Bmi Calculater Page without selection | Bmi Calculater Page with selection |
-| --- | --- |
-| ![ Bmi Calculater Page without selection](assets/images/bmi_calculater_page2.png) | ![ Bmi Calculater Page with selection](assets/images/bmi_calculater_page.png) |
+### Frontend
 
-### 2. Result Page  
-![Result Page](assets/images/bmi_result_page.png)  
+-   Flutter 3.16
+-   Dart 3.0
+
+### App Tools
+
+-   flutter_launcher_icons
+-   rename
+
+---
+
+## 🎥 Application Demo
+
+🎬 
+
+---
+
+## App Screens 📸
+  
+  ![Project Images](assets/images/screens.png) 
+
 
 ---
 
@@ -93,3 +108,13 @@ lib
 
 test
 └─ widget_test.dart
+```
+
+---
+
+## 📦 APK Download
+
+Download the latest version of **BMI Calculator** from GitHub Releases:
+
+👉 [Download Latest APK](https://github.com/SamaShurrab/BMI-Calculator/releases/latest)
+
