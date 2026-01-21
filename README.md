@@ -52,11 +52,6 @@ It is built with a clean structure, custom widgets, and reusable components to e
 
 ## 🛠️ Technologies Used
 
-### Frontend
-
--   Flutter 3.16
--   Dart 3.0
-
 ### App Tools
 
 -   flutter_launcher_icons
